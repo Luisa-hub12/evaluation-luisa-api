@@ -34,13 +34,13 @@ Une section par test en échec : renseignez ses quatre champs.
 
 ## testAddingALineWithAZeroQuantityIsUnprocessable
 
-**Symptôme** :
+**Symptôme** : il faut que quand on ajoute une ligne avec une quantité de 0, ça nous dit que ça nous est pas autorisé
 
-**Cause** :
+**Cause** : OrderADDlineInput.php ligne 21
 
 **Règle du module en jeu** :
 
-**Correctif** :
+**Correctif** : il faut un asset positive sans le zero
 
 ## testListingKitchenTicketsReturnsMine
 
