@@ -4,13 +4,13 @@ Une section par test en échec : renseignez ses quatre champs.
 
 ## testAddingALineToAnUnknownOrderIsNotFound
 
-**Symptôme** :
+**Symptôme** : Le test dit que quand on ajoute une ligne à une commande inconnue, ça nous dit que la commande n'a pas été trouvée.
 
-**Cause** :
+**Cause** :  
 
-**Règle du module en jeu** :
+**Règle du module en jeu** : la règle que ce code doit respecter est que quand on ajoute une ligne à une commande inconnue, ça nous dit que la commande n'a pas été trouvée.
 
-**Correctif** :
+**Correctif** : 
 
 ## testAddingALineToAPaidOrderIsAConflict
 
@@ -74,19 +74,21 @@ Une section par test en échec : renseignez ses quatre champs.
 
 ## testPayingMyOrderMarksItPaid
 
-**Symptôme** :
+**Symptôme** : Le test dit que quand on a payé la commande ça marque que ça à été payé, mais l'api dit que quand on paye la commande, quand on retourne dans le panier, ça dit comme quoi elle a pas encore été reglée.
 
-**Cause** :
+**Cause** : OrderService.php, ligne 213
 
-**Règle du module en jeu** :
+**Règle du module en jeu** : Le code ne respecte pas le fait que quand on a payé on doit dire que la commande a bien été payé, et non re demande à l'utilisateur de payer, il faut mettre un flush
 
-**Correctif** :
+**Correctif** : rajouter à la ligne 213 un flush, pour qu'on ne nous re demande plus de payer une commande une fois qu'elle a été reglée.
+
+$this->orderRepository->flush();
 
 ## testRefreshingTwiceWithTheSameTokenIsUnauthorized
 
-**Symptôme** :
+**Symptôme** : On veut que l'actualisation de 2 jetons ne soit pas autorisé
 
-**Cause** :
+**Cause** : le fichier pour modifier ça est 
 
 **Règle du module en jeu** :
 

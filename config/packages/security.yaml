@@ -28,6 +28,7 @@ security:
             refresh_jwt:
                 check_path: /api/auth/refresh
 
+
     access_control:
         - { path: ^/api/auth, roles: PUBLIC_ACCESS }
         - { path: ^/api/restaurants, roles: PUBLIC_ACCESS }

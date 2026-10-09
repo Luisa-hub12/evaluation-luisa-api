@@ -130,6 +130,7 @@ class OrderService
 
         // aucune garde de doublon : le même plat peut figurer deux fois, une ligne vaut un plat
         // et une quantité
+
         $line = new OrderLine()
             ->setDish($dish)
             ->setQuantity($input->quantity);
@@ -209,6 +210,8 @@ class OrderService
 
         // ni une création ni une suppression : une mise à jour, estampillée comme telle
         $this->audit->stampUpdate($order);
+
+        $this->orderRepository->flush();
 
         return $kitchenTickets;
     }

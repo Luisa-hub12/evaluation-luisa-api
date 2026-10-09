@@ -147,6 +147,7 @@ class Order extends AbstractEntity
         $this->lines->add($line);
         $line->setOrder($this);
 
+
         return $this;
     }
 }
