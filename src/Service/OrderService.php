@@ -179,6 +179,7 @@ class OrderService
             $this->audit->markDeleted($order);
         }
 
+
         // un seul flush : la ligne et, le cas échéant, la commande s'écrivent ensemble
         $this->orderRepository->flush();
     }

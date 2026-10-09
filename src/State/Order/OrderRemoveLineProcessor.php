@@ -26,7 +26,9 @@ final class OrderRemoveLineProcessor implements ProcessorInterface
 
         $this->orderService->removeLine($order, $uriVariables['lineId']);
 
+
         // le 204 du contrat vient de ce null : l'opération ne fabrique aucun objet de sortie
+
         return null;
     }
 }

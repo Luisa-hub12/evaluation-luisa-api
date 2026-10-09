@@ -54,13 +54,13 @@ Une section par test en échec : renseignez ses quatre champs.
 
 ## testListingKitchenTicketsWithoutTokenIsUnauthorized
 
-**Symptôme** :
+**Symptôme** : le test dit que quand on liste les tickets sans token, ça nous dit que ça nous est pas autorisé
 
-**Cause** :
+**Cause** : kitchenticket.php ligne 21
 
-**Règle du module en jeu** :
+**Règle du module en jeu** : il faut mettre is granted dans le security pour dire qu'un user est connecté
 
-**Correctif** :
+**Correctif** : il faut mettre is granted dans le security
 
 ## testOpeningAnOrderIgnoresAnAbandonedOne
 
@@ -88,18 +88,18 @@ $this->orderRepository->flush();
 
 **Symptôme** : On veut que l'actualisation de 2 jetons ne soit pas autorisé
 
-**Cause** : le fichier pour modifier ça est 
+**Cause** : le fichier pour modifier ça est me refresh_token_yaml
 
-**Règle du module en jeu** :
+**Règle du module en jeu** : Il y aura 2 jeton sinon, le token sera pas refresh
 
-**Correctif** :
+**Correctif** : Il faut mettre le single use a true
 
 ## testRemovingALineFromSomeoneElsesOrderIsForbidden
 
-**Symptôme** :
+**Symptôme** : On veut que quand on retire une ligne d'une commande qui n'est pas la nôtre, ça nous dit que ça nous est pas autorisé
 
-**Cause** :
+**Cause** : C'est dans Order.php ligne 52
 
-**Règle du module en jeu** :
+**Règle du module en jeu** : il faut que quand on retire une ligne d'une commande qui n'est pas la nôtre, ça nous dit que ça nous est pas autorisé
 
-**Correctif** :
+**Correctif** : "object.getCreatedBy() == user", a la place de is granted
